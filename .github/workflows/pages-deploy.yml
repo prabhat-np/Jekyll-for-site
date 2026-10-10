@@ -1,4 +1,4 @@
-name: "Build and Deploy"
+name: Build and Deploy
 
 on:
   push:
@@ -26,48 +26,55 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Setup Pages
+      - name: Configure GitHub Pages
         id: pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
-      - name: Setup Ruby
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.4"
           bundler-cache: true
 
+      - name: Verify submodule
+        run: |
+          git submodule status
+          test -f Gemfile
+          bundle exec jekyll --version
+
       - name: Build site
         run: |
           bundle exec jekyll build \
             --baseurl "${{ steps.pages.outputs.base_path }}" \
-            --destination "_site${{ steps.pages.outputs.base_path }}"
+            --destination ./_site
         env:
           JEKYLL_ENV: production
 
-      - name: Inspect generated files
+      - name: Inspect build output
         run: |
-          echo "Base path: ${{ steps.pages.outputs.base_path }}"
-          echo "Site output:"
-          find "_site${{ steps.pages.outputs.base_path }}" -maxdepth 5 -type f | sort | head -200
-          echo "Submodule files:"
-          ls -la assets/lib
+          echo "Generated files:"
+          find _site -maxdepth 4 -type f | sort | head -200
+
+          echo "Checking generated assets:"
+          test -f "_site/assets/css/jekyll-theme-chirpy.css" || true
+          test -f "_site/assets/js/dist/theme.min.js" || true
 
       - name: Test site
         run: |
-          bundle exec htmlproofer "_site${{ steps.pages.outputs.base_path }}" \
+          bundle exec htmlproofer ./_site \
             --disable-external \
-            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            --ignore-urls "/^http:\/\/127\.0\.0\.1/,/^http:\/\/0\.0\.0\.0/,/^http:\/\/localhost/"
 
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
+          path: ./_site
 
   deploy:
     environment:
@@ -80,4 +87,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4

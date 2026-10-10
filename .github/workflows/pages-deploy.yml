@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          submodules: true
+          submodules: recursive
 
       - name: Setup Pages
         id: pages
@@ -50,16 +50,13 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Inspect generated assets
+      - name: Inspect generated files
         run: |
-          echo "Pages base path: ${{ steps.pages.outputs.base_path }}"
-          echo "Generated CSS:"
-          find "_site${{ steps.pages.outputs.base_path }}" -type f -name '*.css'
-          echo "Generated JavaScript:"
-          find "_site${{ steps.pages.outputs.base_path }}" -type f -name '*.js'
-          echo "Generated favicons:"
-          find "_site${{ steps.pages.outputs.base_path }}" -type f \
-            \( -iname '*favicon*' -o -name 'site.webmanifest' \)
+          echo "Base path: ${{ steps.pages.outputs.base_path }}"
+          echo "Site output:"
+          find "_site${{ steps.pages.outputs.base_path }}" -maxdepth 5 -type f | sort | head -200
+          echo "Submodule files:"
+          ls -la assets/lib
 
       - name: Test site
         run: |

@@ -16,15 +16,15 @@ order: 4
 
 I am an Offensive Security Engineer at **Cryptogen Nepal Pvt. Ltd.**, specializing in web application, API, and network penetration testing. My work includes vulnerability assessment and validation, firewall policy reviews, security reporting, risk assessment, and remediation guidance.
 
-I work with industry-standard security tools and OWASP methodologies to identify security weaknesses, validate their impact, and help technical teams improve their security posture.
+I use industry-standard security tools and OWASP methodologies to identify weaknesses, validate impact, and help technical teams strengthen their security posture.
 
-Alongside my professional work, I have experience in cybersecurity training, CTF competitions, challenge development, and community initiatives. I am passionate about offensive security, practical security research, and helping others develop their cybersecurity skills.
+Alongside my professional work, I contribute to cybersecurity training, CTF competitions, challenge development, and community initiatives. I am passionate about offensive security, practical research, and helping others build cybersecurity skills.
 
 ## Professional Experience
 
 ### Offensive Security Engineer
 
-**Cryptogen Nepal Pvt. Ltd.** · August 2024 – Present
+**Cryptogen Nepal Pvt. Ltd.** · Aug 2024 – Present
 
 *Naxal, Kathmandu, Nepal*
 
@@ -38,7 +38,7 @@ Alongside my professional work, I have experience in cybersecurity training, CTF
 
 ### Cybersecurity Trainer (Part-Time)
 
-**Texas College of Management & IT** · January 2026 – February 2026
+**Texas College of Management & IT** · Jan 2026 – Feb 2026
 
 *Chabahil, Kathmandu, Nepal*
 

@@ -10,7 +10,7 @@ order: 4
 
 📍 Kathmandu, Nepal
 
-[Website](https://prabhatkumarthakur.com.np) · [GitHub](https://github.com/prabhat-np) · [Email](mailto:thakurprabhat2059@gmail.com)
+[Website](https://prabhatkumarthakur.com.np) · [GitHub](https://github.com/prabhat-np) · [Email](mailto:thakurprabhat2059@gmail.com) · [Email](https://www.linkedin.com/in/prabhatkumarthakur)
 
 ## Professional Summary
 
@@ -56,7 +56,7 @@ Alongside my professional work, I contribute to cybersecurity training, CTF comp
 
 ## Certifications
 
-- **Certified Penetration Testing Professional – AI (C|PENT|AI)** — EC-Council, September 2026.
+- **Certified Penetration Testing Professional – AI (CPENT-AI)** — EC-Council, September 2026.
 - **Certified Network Security Practitioner (CNSP)** — The SecOps Group, January 2026.
 - **Certified Social Engineering Defense Practitioner (CSEDP)** — The SecOps Group, June 2026.
 - **Certified API Security Analyst (CASA)** — APIsec University, April 2026.
@@ -123,3 +123,4 @@ I am interested in offensive security, penetration testing, security research, a
 - **Email:** [thakurprabhat2059@gmail.com](mailto:thakurprabhat2059@gmail.com)
 - **Website:** [prabhatkumarthakur.com.np](https://prabhatkumarthakur.com.np)
 - **GitHub:** [github.com/prabhat-np](https://github.com/prabhat-np)
+- **Linkedin:** [linkedin.com/prabhatkumarthakur](https://www.linkedin.com/in/prabhatkumarthakur)
